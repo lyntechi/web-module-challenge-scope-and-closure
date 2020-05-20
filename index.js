@@ -86,22 +86,18 @@ finalScore(inning, 9) might return:
 }
 
 */ 
+function finalScore(scoreFromInning, numberOfInnings){
+  let homeScore = 0;
+  let awayScore = 0;
+ for(let inning = 1; inning <= numberOfInnings; inning++){
+   homeScore = scoreFromInning() + homeScore;
+   awayScore = scoreFromInning() + awayScore;
+   console.log(inning);
+ }
+   console.log({ home: homeScore, away: awayScore});
+ }
+ finalScore(inning, 9);
 
-
-function finalScore(inning){
- 
-
-  let awayScore = inning();
-   let homeScore = inning() ;
-   let score = {Home: homeScore, Away:awayScore }; 
-
-
- 
-  return score;
-
-}
-
-finalScore(inning);
 
 
 /* Task 4: 
@@ -125,13 +121,20 @@ and returns the score at each pont in the game, like so:
 
 Final Score: 6 - 10 */
 
-function scoreboard(inning,num) {
-      
-     
-  }
-  /* CODE HERE */
+function scoreboard(inning,numberOfInnings) {
+  let homescore = 0;
+  let awayscore = 0;
+
+ for (let i = 0; i<numberOfInnings; i++){
+   homescore = homescore + inning();
+   awayscore = awayscore + inning ();
+   console.log (`${i+1}st inning: ${homescore} - ${awayscore}`);
+ }
+ console.log (`Final Score: ${homescore} - ${awayscore} `)
+ }
 
 
+ console.log(scoreboard(inning, 9));
 
 
  
